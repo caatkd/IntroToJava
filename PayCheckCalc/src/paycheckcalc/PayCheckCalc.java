@@ -42,7 +42,8 @@ public class PayCheckCalc {
     //h = in.nextInt();
     
     
-    if (hours <= 40){ 
+    if (hours <= 40 && hours >=0)
+    { 
         float result = (hours *payrate);
         System.out.println("You worked "+ hours+" hours with no overtime hours.");
         System.out.println("Your pay rate is $"+ payrate + " an hour.");
@@ -55,7 +56,8 @@ public class PayCheckCalc {
         
 
     }
-    else { 
+    else if (hours > 40) 
+    { 
         System.out.println("Enter your overtime multiplier: ");
         otrate = in.nextFloat();
         float overtimehours = hours - 40;
@@ -70,6 +72,12 @@ public class PayCheckCalc {
         NumberFormat nf = NumberFormat.getCurrencyInstance(mylocale);
         System.out.println("Your pay is "+ nf.format(result));
     }
+    else 
+    {
+         System.out.println("Pleace use integers. If you used integers you need to ask CJ to construct additional pylons.");
+               
+    }
+    }
     //System.out.println("Pay with overtime is "+ hours * payrate + ot*9*(hours-40));
     //System.out.println("You worked "+ hours +" hours.");
     //System.out.println("You worked " + (hours-40)+ " overtime hours");
@@ -79,4 +87,4 @@ public class PayCheckCalc {
    
     
     }
-}
+
