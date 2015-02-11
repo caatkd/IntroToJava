@@ -6,6 +6,9 @@
 package paycheckcalc;
 
 import java.util.Scanner;
+import java.util.*;
+import java.text.*;
+
 
 /**
  *
@@ -43,7 +46,13 @@ public class PayCheckCalc {
         float result = (hours *payrate);
         System.out.println("You worked "+ hours+" hours with no overtime hours.");
         System.out.println("Your pay rate is $"+ payrate + " an hour.");
-        System.out.println("Your pay is $"+ result);
+        //System.out.println("Your pay is $"+ result);
+        Locale mylocale = new Locale("en", "US");
+        Currency mycurrency = Currency.getInstance(mylocale);
+        NumberFormat nf = NumberFormat.getCurrencyInstance(mylocale);
+        System.out.println("Your pay is "+ nf.format(result));
+        
+        
 
     }
     else { 
@@ -55,7 +64,11 @@ public class PayCheckCalc {
         System.out.println("You worked " + hours+ " hours with "+ overtimehours +" overtime hours.");
         System.out.println("Your pay rate is $" + payrate + " an hour.");
         System.out.println("Your overtime pay is: "+otrate+".Which is $"+ payrate*otrate+ " an hour.");
-        System.out.println("Your pay is $"+ result); 
+        //System.out.println("Your pay is $"+ result); 
+        Locale mylocale = new Locale("en", "US");
+        Currency mycurrency = Currency.getInstance(mylocale);
+        NumberFormat nf = NumberFormat.getCurrencyInstance(mylocale);
+        System.out.println("Your pay is "+ nf.format(result));
     }
     //System.out.println("Pay with overtime is "+ hours * payrate + ot*9*(hours-40));
     //System.out.println("You worked "+ hours +" hours.");
