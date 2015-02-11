@@ -63,7 +63,7 @@ public class PayCheckCalc {
         float result = (hours - overtimehours)*payrate +ot;
         System.out.println("You worked " + hours+ " hours with "+ overtimehours +" overtime hours.");
         System.out.println("Your pay rate is $" + payrate + " an hour.");
-        System.out.println("Your overtime pay is: "+otrate+".Which is $"+ payrate*otrate+ " an hour.");
+        System.out.println("Your overtime pay is: "+otrate+". Which is $"+ payrate*otrate+ " an hour.");
         //System.out.println("Your pay is $"+ result); 
         Locale mylocale = new Locale("en", "US");
         Currency mycurrency = Currency.getInstance(mylocale);
